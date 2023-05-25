@@ -1,0 +1,88 @@
+Student_MS(ms1)_ROLES(admin)_SUB-MODULE(student)_MENU(Student):
+  id: Long ID
+  cin: String LABEL_REQUIERED
+  firstName: String REQUIERED
+  lastName: String REQUIERED
+  email: String
+  phoneNumber: String
+  address: String
+  registrationDate: LocalDateTime
+  semestersAverages: SemesterAverage List
+  payments: Payment List
+  graduated: Boolean
+  diploma: Diploma
+
+Training_MS(ms1)_ROLES(admin)_SUB-MODULE(training)_MENU(Student):
+  id: Long ID
+  code: String REF_REQUIERED
+  libelle: String LABEL_REQUIERED
+  duration: Integer
+  trainingCost: BigDecimal
+  student: Student
+
+
+Semester_MS(ms1)_ROLES(admin)_SUB-MODULE(semester)_MENU(Semester):
+  id: Long ID
+  code: String REF_REQUIERED
+  libelle: String LABEL_REQUIERED
+  startDate: LocalDateTime
+  endDate: LocalDateTime
+  training: Training
+  semesterModules: SemesterModule List
+
+SemesterModule_MS(ms1)_ROLES(admin)_SUB-MODULE(semester)_MENU(Semester):
+  id: Long ID
+  module: Module
+  semester: Semester
+
+Module_MS(ms1)_ROLES(admin)_SUB-MODULE(semester)_MENU(Module):
+  id: Long ID
+  code: String REF_REQUIERED
+  libelle: String LABEL_REQUIERED
+
+
+Exam_MS(ms1)_ROLES(admin)_SUB-MODULE(exam)_MENU(Exam):
+  id: Long ID
+  module: Module
+  semester: Semester
+  dateExam: LocalDateTime
+  examGrades: ExamGrade List
+
+ExamGrade_MS(ms1)_ROLES(admin)_SUB-MODULE(exam)_MENU(Exam):
+  id: Long ID
+  exam: Exam
+  student: Student
+  grade: BigDecimal
+
+ModuleGrade_MS(ms1)_EXPORT_ROLES(admin)_SUB-MODULE(modulegrade)_MENU(Student):
+  id: Long ID
+  student: Student
+  module: Module
+  semester: Semester
+  grade: BigDecimal
+
+SemesterAverage_MS(ms1)_EXPORT_ROLES(admin)_SUB-MODULE(semesteraverage)_MENU(Student):
+  id: Long ID
+  student: Student
+  semester: Semester
+  average: BigDecimal
+  validated: Boolean
+
+Payment_MS(ms1)_EXPORT_ROLES(admin)_SUB-MODULE(payment)_MENU(Student):
+  id: Long ID
+  student: Student
+  training: Training
+  semester: Semester
+  amount: BigDecimal
+  paidDate: LocalDateTime
+
+
+Diploma_MS(ms1)_ROLES(admin)_SUB-MODULE(student)_MENU(Student):
+  id: Long ID
+  student: Student
+  training: Training
+  dateIssued: LocalDateTime
+
+$CONFIG:
+  ms: "{name=ms1, packaging=myms1, url=http://localhost:8090/api/v1}"
+  currentMs: ms1
