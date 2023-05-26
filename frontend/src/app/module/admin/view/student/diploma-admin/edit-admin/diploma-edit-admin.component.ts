@@ -8,10 +8,10 @@ import {DiplomaDto} from 'src/app/controller/model/Diploma.model';
 import {DiplomaCriteria} from 'src/app/controller/criteria/DiplomaCriteria.model';
 
 
-import {StudentDto} from 'src/app/controller/model/Student.model';
-import {StudentService} from 'src/app/controller/service/Student.service';
 import {TrainingDto} from 'src/app/controller/model/Training.model';
 import {TrainingService} from 'src/app/controller/service/Training.service';
+import {StudentDto} from 'src/app/controller/model/Student.model';
+import {StudentService} from 'src/app/controller/service/Student.service';
 
 @Component({
   selector: 'app-diploma-edit-admin',
@@ -29,7 +29,7 @@ export class DiplomaEditAdminComponent extends AbstractEditController<DiplomaDto
 
 
 
-    constructor( private diplomaService: DiplomaService , private studentService: StudentService, private trainingService: TrainingService) {
+    constructor( private diplomaService: DiplomaService , private trainingService: TrainingService, private studentService: StudentService) {
         super(diplomaService);
     }
 

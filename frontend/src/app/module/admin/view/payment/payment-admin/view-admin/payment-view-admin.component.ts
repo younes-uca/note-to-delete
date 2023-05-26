@@ -8,12 +8,12 @@ import {PaymentService} from 'src/app/controller/service/Payment.service';
 import {PaymentDto} from 'src/app/controller/model/Payment.model';
 import {PaymentCriteria} from 'src/app/controller/criteria/PaymentCriteria.model';
 
-import {StudentDto} from 'src/app/controller/model/Student.model';
-import {StudentService} from 'src/app/controller/service/Student.service';
 import {SemesterDto} from 'src/app/controller/model/Semester.model';
 import {SemesterService} from 'src/app/controller/service/Semester.service';
 import {TrainingDto} from 'src/app/controller/model/Training.model';
 import {TrainingService} from 'src/app/controller/service/Training.service';
+import {StudentDto} from 'src/app/controller/model/Student.model';
+import {StudentService} from 'src/app/controller/service/Student.service';
 @Component({
   selector: 'app-payment-view-admin',
   templateUrl: './payment-view-admin.component.html'
@@ -21,7 +21,7 @@ import {TrainingService} from 'src/app/controller/service/Training.service';
 export class PaymentViewAdminComponent extends AbstractViewController<PaymentDto, PaymentCriteria, PaymentService> implements OnInit {
 
 
-    constructor(private paymentService: PaymentService, private studentService: StudentService, private semesterService: SemesterService, private trainingService: TrainingService){
+    constructor(private paymentService: PaymentService, private semesterService: SemesterService, private trainingService: TrainingService, private studentService: StudentService){
         super(paymentService);
     }
 

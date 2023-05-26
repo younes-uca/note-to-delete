@@ -8,10 +8,10 @@ import {DiplomaService} from 'src/app/controller/service/Diploma.service';
 import {DiplomaDto} from 'src/app/controller/model/Diploma.model';
 import {DiplomaCriteria} from 'src/app/controller/criteria/DiplomaCriteria.model';
 
-import {StudentDto} from 'src/app/controller/model/Student.model';
-import {StudentService} from 'src/app/controller/service/Student.service';
 import {TrainingDto} from 'src/app/controller/model/Training.model';
 import {TrainingService} from 'src/app/controller/service/Training.service';
+import {StudentDto} from 'src/app/controller/model/Student.model';
+import {StudentService} from 'src/app/controller/service/Student.service';
 @Component({
   selector: 'app-diploma-view-admin',
   templateUrl: './diploma-view-admin.component.html'
@@ -19,7 +19,7 @@ import {TrainingService} from 'src/app/controller/service/Training.service';
 export class DiplomaViewAdminComponent extends AbstractViewController<DiplomaDto, DiplomaCriteria, DiplomaService> implements OnInit {
 
 
-    constructor(private diplomaService: DiplomaService, private studentService: StudentService, private trainingService: TrainingService){
+    constructor(private diplomaService: DiplomaService, private trainingService: TrainingService, private studentService: StudentService){
         super(diplomaService);
     }
 

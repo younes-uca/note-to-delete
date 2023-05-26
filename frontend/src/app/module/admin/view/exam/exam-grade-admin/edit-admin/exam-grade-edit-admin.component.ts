@@ -8,10 +8,10 @@ import {ExamGradeDto} from 'src/app/controller/model/ExamGrade.model';
 import {ExamGradeCriteria} from 'src/app/controller/criteria/ExamGradeCriteria.model';
 
 
-import {ExamDto} from 'src/app/controller/model/Exam.model';
-import {ExamService} from 'src/app/controller/service/Exam.service';
 import {StudentDto} from 'src/app/controller/model/Student.model';
 import {StudentService} from 'src/app/controller/service/Student.service';
+import {ExamDto} from 'src/app/controller/model/Exam.model';
+import {ExamService} from 'src/app/controller/service/Exam.service';
 
 @Component({
   selector: 'app-exam-grade-edit-admin',
@@ -27,7 +27,7 @@ export class ExamGradeEditAdminComponent extends AbstractEditController<ExamGrad
 
 
 
-    constructor( private examGradeService: ExamGradeService , private examService: ExamService, private studentService: StudentService) {
+    constructor( private examGradeService: ExamGradeService , private studentService: StudentService, private examService: ExamService) {
         super(examGradeService);
     }
 

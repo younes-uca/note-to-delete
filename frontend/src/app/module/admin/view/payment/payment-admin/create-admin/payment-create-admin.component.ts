@@ -5,12 +5,12 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {PaymentService} from 'src/app/controller/service/Payment.service';
 import {PaymentDto} from 'src/app/controller/model/Payment.model';
 import {PaymentCriteria} from 'src/app/controller/criteria/PaymentCriteria.model';
-import {StudentDto} from 'src/app/controller/model/Student.model';
-import {StudentService} from 'src/app/controller/service/Student.service';
 import {SemesterDto} from 'src/app/controller/model/Semester.model';
 import {SemesterService} from 'src/app/controller/service/Semester.service';
 import {TrainingDto} from 'src/app/controller/model/Training.model';
 import {TrainingService} from 'src/app/controller/service/Training.service';
+import {StudentDto} from 'src/app/controller/model/Student.model';
+import {StudentService} from 'src/app/controller/service/Student.service';
 @Component({
   selector: 'app-payment-create-admin',
   templateUrl: './payment-create-admin.component.html'
@@ -27,7 +27,7 @@ export class PaymentCreateAdminComponent extends AbstractCreateController<Paymen
     private _validSemesterCode = true;
     private _validSemesterLibelle = true;
 
-    constructor( private paymentService: PaymentService , private studentService: StudentService, private semesterService: SemesterService, private trainingService: TrainingService) {
+    constructor( private paymentService: PaymentService , private semesterService: SemesterService, private trainingService: TrainingService, private studentService: StudentService) {
         super(paymentService);
     }
 

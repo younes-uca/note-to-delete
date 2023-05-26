@@ -5,12 +5,12 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {SemesterService} from 'src/app/controller/service/Semester.service';
 import {SemesterDto} from 'src/app/controller/model/Semester.model';
 import {SemesterCriteria} from 'src/app/controller/criteria/SemesterCriteria.model';
-import {SemesterModuleDto} from 'src/app/controller/model/SemesterModule.model';
-import {SemesterModuleService} from 'src/app/controller/service/SemesterModule.service';
 import {ModuleDto} from 'src/app/controller/model/Module.model';
 import {ModuleService} from 'src/app/controller/service/Module.service';
 import {TrainingDto} from 'src/app/controller/model/Training.model';
 import {TrainingService} from 'src/app/controller/service/Training.service';
+import {SemesterModuleDto} from 'src/app/controller/model/SemesterModule.model';
+import {SemesterModuleService} from 'src/app/controller/service/SemesterModule.service';
 @Component({
   selector: 'app-semester-create-admin',
   templateUrl: './semester-create-admin.component.html'
@@ -26,7 +26,7 @@ export class SemesterCreateAdminComponent extends AbstractCreateController<Semes
     private _validTrainingLibelle = true;
     private _semesterModules: Array<SemesterModuleDto> = [];
 
-    constructor( private semesterService: SemesterService , private semesterModuleService: SemesterModuleService, private moduleService: ModuleService, private trainingService: TrainingService) {
+    constructor( private semesterService: SemesterService , private moduleService: ModuleService, private trainingService: TrainingService, private semesterModuleService: SemesterModuleService) {
         super(semesterService);
     }
 

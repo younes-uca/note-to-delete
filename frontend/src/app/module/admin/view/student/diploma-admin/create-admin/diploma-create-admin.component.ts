@@ -5,10 +5,10 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {DiplomaService} from 'src/app/controller/service/Diploma.service';
 import {DiplomaDto} from 'src/app/controller/model/Diploma.model';
 import {DiplomaCriteria} from 'src/app/controller/criteria/DiplomaCriteria.model';
-import {StudentDto} from 'src/app/controller/model/Student.model';
-import {StudentService} from 'src/app/controller/service/Student.service';
 import {TrainingDto} from 'src/app/controller/model/Training.model';
 import {TrainingService} from 'src/app/controller/service/Training.service';
+import {StudentDto} from 'src/app/controller/model/Student.model';
+import {StudentService} from 'src/app/controller/service/Student.service';
 @Component({
   selector: 'app-diploma-create-admin',
   templateUrl: './diploma-create-admin.component.html'
@@ -23,7 +23,7 @@ export class DiplomaCreateAdminComponent extends AbstractCreateController<Diplom
     private _validTrainingCode = true;
     private _validTrainingLibelle = true;
 
-    constructor( private diplomaService: DiplomaService , private studentService: StudentService, private trainingService: TrainingService) {
+    constructor( private diplomaService: DiplomaService , private trainingService: TrainingService, private studentService: StudentService) {
         super(diplomaService);
     }
 

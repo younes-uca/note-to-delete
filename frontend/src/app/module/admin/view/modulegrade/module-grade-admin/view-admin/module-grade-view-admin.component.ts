@@ -8,12 +8,12 @@ import {ModuleGradeService} from 'src/app/controller/service/ModuleGrade.service
 import {ModuleGradeDto} from 'src/app/controller/model/ModuleGrade.model';
 import {ModuleGradeCriteria} from 'src/app/controller/criteria/ModuleGradeCriteria.model';
 
-import {StudentDto} from 'src/app/controller/model/Student.model';
-import {StudentService} from 'src/app/controller/service/Student.service';
 import {SemesterDto} from 'src/app/controller/model/Semester.model';
 import {SemesterService} from 'src/app/controller/service/Semester.service';
 import {ModuleDto} from 'src/app/controller/model/Module.model';
 import {ModuleService} from 'src/app/controller/service/Module.service';
+import {StudentDto} from 'src/app/controller/model/Student.model';
+import {StudentService} from 'src/app/controller/service/Student.service';
 @Component({
   selector: 'app-module-grade-view-admin',
   templateUrl: './module-grade-view-admin.component.html'
@@ -21,7 +21,7 @@ import {ModuleService} from 'src/app/controller/service/Module.service';
 export class ModuleGradeViewAdminComponent extends AbstractViewController<ModuleGradeDto, ModuleGradeCriteria, ModuleGradeService> implements OnInit {
 
 
-    constructor(private moduleGradeService: ModuleGradeService, private studentService: StudentService, private semesterService: SemesterService, private moduleService: ModuleService){
+    constructor(private moduleGradeService: ModuleGradeService, private semesterService: SemesterService, private moduleService: ModuleService, private studentService: StudentService){
         super(moduleGradeService);
     }
 

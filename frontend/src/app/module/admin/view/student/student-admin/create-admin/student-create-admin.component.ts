@@ -5,8 +5,6 @@ import { AbstractCreateController } from 'src/app/zynerator/controller/AbstractC
 import {StudentService} from 'src/app/controller/service/Student.service';
 import {StudentDto} from 'src/app/controller/model/Student.model';
 import {StudentCriteria} from 'src/app/controller/criteria/StudentCriteria.model';
-import {DiplomaDto} from 'src/app/controller/model/Diploma.model';
-import {DiplomaService} from 'src/app/controller/service/Diploma.service';
 import {SemesterDto} from 'src/app/controller/model/Semester.model';
 import {SemesterService} from 'src/app/controller/service/Semester.service';
 import {SemesterAverageDto} from 'src/app/controller/model/SemesterAverage.model';
@@ -15,6 +13,8 @@ import {TrainingDto} from 'src/app/controller/model/Training.model';
 import {TrainingService} from 'src/app/controller/service/Training.service';
 import {PaymentDto} from 'src/app/controller/model/Payment.model';
 import {PaymentService} from 'src/app/controller/service/Payment.service';
+import {DiplomaDto} from 'src/app/controller/model/Diploma.model';
+import {DiplomaService} from 'src/app/controller/service/Diploma.service';
 @Component({
   selector: 'app-student-create-admin',
   templateUrl: './student-create-admin.component.html'
@@ -29,7 +29,7 @@ export class StudentCreateAdminComponent extends AbstractCreateController<Studen
    private _validStudentFirstName = true;
    private _validStudentLastName = true;
 
-    constructor( private studentService: StudentService , private diplomaService: DiplomaService, private semesterService: SemesterService, private semesterAverageService: SemesterAverageService, private trainingService: TrainingService, private paymentService: PaymentService) {
+    constructor( private studentService: StudentService , private semesterService: SemesterService, private semesterAverageService: SemesterAverageService, private trainingService: TrainingService, private paymentService: PaymentService, private diplomaService: DiplomaService) {
         super(studentService);
     }
 

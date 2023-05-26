@@ -8,10 +8,10 @@ import {SemesterAverageService} from 'src/app/controller/service/SemesterAverage
 import {SemesterAverageDto} from 'src/app/controller/model/SemesterAverage.model';
 import {SemesterAverageCriteria} from 'src/app/controller/criteria/SemesterAverageCriteria.model';
 
-import {StudentDto} from 'src/app/controller/model/Student.model';
-import {StudentService} from 'src/app/controller/service/Student.service';
 import {SemesterDto} from 'src/app/controller/model/Semester.model';
 import {SemesterService} from 'src/app/controller/service/Semester.service';
+import {StudentDto} from 'src/app/controller/model/Student.model';
+import {StudentService} from 'src/app/controller/service/Student.service';
 @Component({
   selector: 'app-semester-average-view-admin',
   templateUrl: './semester-average-view-admin.component.html'
@@ -19,7 +19,7 @@ import {SemesterService} from 'src/app/controller/service/Semester.service';
 export class SemesterAverageViewAdminComponent extends AbstractViewController<SemesterAverageDto, SemesterAverageCriteria, SemesterAverageService> implements OnInit {
 
 
-    constructor(private semesterAverageService: SemesterAverageService, private studentService: StudentService, private semesterService: SemesterService){
+    constructor(private semesterAverageService: SemesterAverageService, private semesterService: SemesterService, private studentService: StudentService){
         super(semesterAverageService);
     }
 

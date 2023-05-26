@@ -8,14 +8,14 @@ import {ExamDto} from 'src/app/controller/model/Exam.model';
 import {ExamCriteria} from 'src/app/controller/criteria/ExamCriteria.model';
 
 
-import {SemesterDto} from 'src/app/controller/model/Semester.model';
-import {SemesterService} from 'src/app/controller/service/Semester.service';
-import {StudentDto} from 'src/app/controller/model/Student.model';
-import {StudentService} from 'src/app/controller/service/Student.service';
-import {ModuleDto} from 'src/app/controller/model/Module.model';
-import {ModuleService} from 'src/app/controller/service/Module.service';
 import {ExamGradeDto} from 'src/app/controller/model/ExamGrade.model';
 import {ExamGradeService} from 'src/app/controller/service/ExamGrade.service';
+import {SemesterDto} from 'src/app/controller/model/Semester.model';
+import {SemesterService} from 'src/app/controller/service/Semester.service';
+import {ModuleDto} from 'src/app/controller/model/Module.model';
+import {ModuleService} from 'src/app/controller/service/Module.service';
+import {StudentDto} from 'src/app/controller/model/Student.model';
+import {StudentService} from 'src/app/controller/service/Student.service';
 
 @Component({
   selector: 'app-exam-edit-admin',
@@ -33,7 +33,7 @@ export class ExamEditAdminComponent extends AbstractEditController<ExamDto, Exam
 
 
 
-    constructor( private examService: ExamService , private semesterService: SemesterService, private studentService: StudentService, private moduleService: ModuleService, private examGradeService: ExamGradeService) {
+    constructor( private examService: ExamService , private examGradeService: ExamGradeService, private semesterService: SemesterService, private moduleService: ModuleService, private studentService: StudentService) {
         super(examService);
     }
 

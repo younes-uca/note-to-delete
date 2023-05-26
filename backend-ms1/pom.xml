@@ -9,9 +9,9 @@
         <relativePath/>  lookup parent from repository 
     </parent>
     <groupId>ma.sir</groupId>
-    <artifactId>note</artifactId>
+    <artifactId>pmp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>note</name>
+    <name>pmp</name>
     <description>Demo project generated</description>
 
     <properties>
